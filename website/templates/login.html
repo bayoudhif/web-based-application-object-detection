@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content %}
+
+<div class="text-center" style="margin-top: 120px;">
+    <form style="max-width:480px;margin: auto;" method="POST">
+        <img class="mt-4 mb-4" src="{{url_for('static',filename='drax_logo_sm.png')}}" height="100">
+        <h1 class="h3 mb-3 font-weight-normal ">Login</h1>
+        <label for="email" class="sr-only">Email Address:</label>
+        <input type="email" id="email" class="form-control" placeholder="E-Mail" name="email" required autofocus>
+        <label for="password" class="sr-only">Password:</label>
+        <input type="password" id="password" placeholder="Password" class="form-control" name="password" required>
+        <br>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox" style="color:#808080">Remember My Password </label>
+
+        <input type="submit" value="Login " class="btn btn-lg btn-dark w-100 ">
+    </form>
+    <a href="/sign-up" style="color:#808080;" onmouseover="this.style.color='#3b3a37'" onmouseout="this.style.color='#808080'">Don't Have an Account ?</a>
+    <br>
+
+</div>
+{% endblock %}

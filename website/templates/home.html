@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+
+<div style="margin-top: 120px,">
+    <div style="max-width:480px;margin: auto;" align="center">
+        <img class="mt-4 mb-4 masthead-avatar  " src="{{url_for( 'static',filename='drax_logo_sm.png')}}" height="160">
+
+        <h1>
+            <span style="font-weight:bolder;font-family:Lucida Sans;">Welcome,</span> <span style="font-weight:lighter ;">{{user.first_name}}</span></h1>
+        {% if current_user.active==True %}
+
+        <h4>
+            <span style="font-weight:bolder;font-family:Lucida Sans;">Account Status:</span> <span style="font-weight:lighter ;color: green;"> Activated</span></h4>
+        <br>
+
+        <a href="/notes"> <input type="submit" value="Take Notes" class="btn btn-lg btn-dark w-70">
+        </a>
+        <br>
+        <br>
+        <a href="/recognition"> <input type="submit" value="Piece Recognition" class="btn btn-lg btn-dark w-40">
+        </a>
+        <br>
+        <br> {% endif %} {% if current_user.active==False %}
+
+        <h4>
+            <span style="font-weight:bolder;font-family:Lucida Sans;">Account Status:</span> <span style="font-weight:lighter ;color: red;">Not Activated</span></h4>
+        <br> {% endif %} {% if current_user.id==1 %}
+
+
+        <a href="/admin"> <input type="submit" value="Admin Panel" class="btn btn-lg btn-dark w-70">
+        </a>
+        <br>
+
+        <br> {% endif %}
+        <a href="/settings"> <input type="submit" value="Account Settings" class="btn btn-lg btn-dark w-40">
+        </a>
+        <br>
+        <br>
+        <a href="/logout"> <input type="submit" value="Logout" class="btn btn-lg btn-light w-40">
+        </a>
+
+
+
+
+
+    </div>
+    {% endblock %}
